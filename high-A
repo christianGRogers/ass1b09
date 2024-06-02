@@ -1,0 +1,39 @@
+#!/bin/sh
+parse_mode=""
+n=0
+parse_Markus(){
+    sort -k 2 -t ',' "$roster_fileName" | join -t "," -1 2 -2 1 - "$marks_fileName" | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n" > congratulation_list.txt
+}
+parse_RO(){
+    sort -k 1 -t ',' "$roster_fileName" | join -t "," -1 1 -2 1 - "$marks_fileName" | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n" > congratulation_list.txt
+}
+while getopts "mrn:" o; do
+    case "${o}" in
+        m)
+            [ -n "${parse_mode}" ] && exit 1
+            parse_mode="m"
+            ;;
+        r)
+            [ -n "${parse_mode}" ] && exit 1
+            parse_mode="r"
+            ;;
+        n)
+            n=${OPTARG}
+        ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+roster_fileName=$1
+marks_fileName=$2
+case "${parse_mode}" in
+        m)
+            parse_Markus
+            ;;
+        r)
+            parse_RO
+            ;;
+        *)
+            exit 1
+            ;;
+esac
