@@ -3,10 +3,10 @@
 parse_mode=""
 n=0
 parse_Markus(){
-    join -t "," -1 2 -2 1 <(sort -k 2 -t ',' "$roster_fileName") <(sort -t ',') | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n" > congratulation_list.txt
+    join -t "," -1 2 -2 1 <(sort -k 2 -t ',' "$roster_fileName") <(sort -t ',') | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n"
 }
 parse_RO(){
-    join -t "," -1 1 -2 1 <(sort -k 1 -t ',' "$roster_fileName") <(sort -t ',') | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n" > congratulation_list.txt
+    join -t "," -1 1 -2 1 <(sort -k 1 -t ',' "$roster_fileName") <(sort -t ',') | cut -d ',' -f 3,4 | sort -t ',' -k 2 -n -r | head -n "$n"
 }
 while getopts "mrn:" o; do
     case "${o}" in
