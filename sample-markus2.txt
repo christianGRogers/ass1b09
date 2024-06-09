@@ -1,0 +1,7 @@
+dijkstra,73
+rivest,85
+wirth,90
+hoarecha,76
+turing,95
+knuth,88
+hintonge,100

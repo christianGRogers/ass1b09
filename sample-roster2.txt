@@ -1,0 +1,8 @@
+1002506032,knuth,donald@mail.utoronto.ca
+1001414214,trebla,albert@mail.utoronto.ca
+1000303040,rivest,ron@mail.utoronto.ca
+1031415044,hoarecha,tony@mail.utoronto.ca
+1001205034,wirth,nicolaus@mail.utoronto.ca
+1000905416,hintonge,geoff@mail.utoronto.ca
+1002005031,dijkstra,ewd@mail.utoronto.ca
+1000123456,turing,alan@mail.utoronto.ca
